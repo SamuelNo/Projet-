@@ -1,0 +1,49 @@
+import random
+
+
+def distribution(joueur1,joueur2,carte):
+    for i in range (2,15):
+        carte.append(i)
+        random.shuffle(carte)
+    for j in range (0,52):
+        deck = carte[j]
+        joueur1.append(carte)
+        deck = carte[j]
+        joueur2.append(carte)
+    return joueur1,joueur2
+
+def jeu(joueur1,joueur2):
+    if carte1>carte2:
+        print("Joueur 1 gagne")
+    elif carte1<carte2:
+        print("Joueur 2 gagne")
+def carte(joueur1,joueur2,carte1,carte2):
+    if carte1==11:
+        carte1="V"
+    if carte2==11:
+        carte2="V"
+    if carte1==12:
+        carte1="Q"
+    if carte2==12:
+        carte2="Q"
+    if carte1==13:
+        carte1="K"
+    if carte2==13:
+        carte2="K"
+    if carte1==14:
+        carte1="A"
+    if carte2==14:
+        carte2="A"
+    print("Joueur1:",carte1)
+    print("Joueur2:",carte2)
+
+
+carte = []
+joueur1 = []
+joueur2 = []
+deck = []
+
+distribution(joueur1,joueur2,deck)
+
+
+
