@@ -28,7 +28,6 @@ def jeu(joueur1,joueur2):
         joueur2.append(carte1)
         joueur2.pop(0)
         joueur2.append(carte2)
-        affichage(joueur1,joueur2,carte1,carte2)
         print("Joueur 2 gagne")
     elif carte1>carte2:
         joueur2.pop(0)
