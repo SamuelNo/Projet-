@@ -13,10 +13,10 @@ def distribution(joueur1,joueur2,cartes,):
         cartes.append(i)
     random.shuffle(cartes)
     
-    for j in range (0,52,2):
+    for j in range (0,52):
         carte1 = cartes[j]
         joueur1.append(carte1)
-        carte2 = cartes[j+1]
+        carte2 = cartes[j]
         joueur2.append(carte2)
     return joueur1,joueur2
     
