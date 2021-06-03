@@ -1,0 +1,20 @@
+import random
+
+def liste1 (i,l):
+    l = []
+    for i in range(0,27):
+        l.append(i)
+    return l
+
+def liste2 (s,L):
+    L = []
+    for s in range(27,53):
+        L.append(s)
+    return L
+
+first = liste1(0,0)
+second = liste2(0,0)
+
+print(first)
+print(second)
+
