@@ -1,0 +1,55 @@
+import random
+class Pile:
+    def __init__(self):
+        self.data = []
+
+    def empiler(self, element):
+        self.data.append(element)
+
+    def hauteur(self):
+        return len(self.data)
+
+    def est_vide(self):
+        return self.hauteur() == 0
+
+    def depiler(self):
+        return self.data.pop()
+
+    def sommet(self):
+        return self.data.pop[-1]
+
+    def perfect_shuffle(self):
+        P = Pile()
+        Q = Pile()
+        while not self.est_vide():
+            carte1= self.depiler()
+            Q.empiler(carte1)
+            carte2 = self.depiler()
+            P.empiler(carte2)
+        print(P.data,Q.data)
+        Z = P
+        A = Q        
+        Fusion = Pile()
+        while not Z.est_vide() and not A.est_vide():
+            for i in range(min(random.randint(1,2),Z.hauteur())):
+                carte1 = Z.depiler()
+                Fusion.empiler(carte1)
+            for i in range(min(random.randint(1,2),A.hauteur())):
+                carte2 = A.depiler()
+                Fusion.empiler(carte2)
+
+        while not Z.est_vide():
+            carte_last= Z.depiler()
+            Fusion.empiler(carte_last)
+
+        while not A.est_vide():
+            carte_last2 = A.depiler()
+            Fusion.empiler(carte_last2)
+
+        return Fusion.data
+        
+piles3 = Pile()
+for i in range (10):
+    Pile.empiler(piles3,i)
+print(piles3.data)
+print(piles3.perfect_shuffle())
